@@ -64,7 +64,101 @@ This project serves as an educational resource and portfolio piece demonstrating
 
 ---
 
-## 🏗️ System Architecture
+---
 
-### Class Hierarchy
+## 🔑 OOP Concepts Demonstrated
 
+### 1️⃣ Encapsulation
+```cpp
+// Data protection with controlled access
+private:
+    double budget, spent;
+    
+public:
+    bool spend(double amount);  // Validated access
+    double getRemaining() const;
+
+Private member variables
+Public getter/setter methods
+Input validation
+Data consistency protection
+2️⃣ Inheritance
+cpp
+
+
+class Destination { /* base */ };
+class BeachDestination : public Destination { /* adds water sports */ };
+class MountainDestination : public Destination { /* adds altitude */ };
+Single base class
+Multi-level derivation
+Code reuse
+Specialized behavior
+3️⃣ Polymorphism
+cpp
+
+
+virtual void display() const;          // Base class
+void display() const override;         // Derived classes
+Virtual functions
+Runtime method resolution
+Unified interface
+Type-specific behavior
+4️⃣ Operator Overloading
+
+
+
+Operator	Purpose	Usage
+<	Cost comparison	Sorting
+==	Equality check	Searching
+=	Deep copy	Assignment
++=	Add destination	trip += dest
++	Merge trips	merged = trip1 + trip2
+[]	Array access	trip[0]
+<<	Stream output	cout << object
+5️⃣ Memory Management
+Dynamic array allocation with new[]
+Automatic array resizing
+Deep copy in copy constructor
+Proper deallocation in destructor
+No memory leaks (RAII pattern)
+6️⃣ Composition
+Trip contains Traveler object
+Trip contains Date object
+Trip contains array of Destination objects
+Has-a relationships (not is-a)
+📁 Project Structure
+
+
+ROAM-TripPlanner/
+│
+├── src/                          # Source code
+│   ├── Trace.h                  # Debug utility for tracing
+│   ├── Date.h, Date.cpp         # Date class (~120 LOC)
+│   ├── Traveler.h, Traveler.cpp # Traveler class (~80 LOC)
+│   ├── Destination.h, Destination.cpp  # Hierarchy (~200 LOC)
+│   ├── Trip.h, Trip.cpp         # Main class (~180 LOC)
+│   ├── main.cpp                 # Entry point (~220 LOC)
+│   └── roam                     # Compiled executable
+│
+├── docs/                         # Documentation
+│   ├── README.md                # Documentation
+│   └── screenshots/             # Test execution screenshots
+│       ├── 00_initial_setup.png
+│       ├── 01_view_trip_empty.png
+│       └── ... (all 13 screenshots)
+│
+├── .gitignore                   # Git ignore rules
+├── README.md                    # This file
+└── ROAM_Mid_Semester_Report.pdf # Complete project report
+📊 Code Statistics
+
+
+
+Metric	Value
+Total Files	10
+Lines of Code	~810
+Classes	6
+Methods	45+
+Operator Overloads	8
+Test Cases	13
+Test Pass Rate	100% ✅
